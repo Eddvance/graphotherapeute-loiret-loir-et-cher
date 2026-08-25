@@ -302,17 +302,15 @@ a {
 /* PROGRÈS */
 
 .progress-section {
-    padding: 12px 0 14px;
+    padding: 0 0 12px;
     background: var(--green-dark);
 }
 
 .progress-card {
-    background: #073936;
-    color: var(--cream);
-    border: 1px solid rgba(233, 149, 24, 0.22);
+    background: var(--cream);
+    color: var(--text-dark);
     border-radius: var(--radius);
-    padding: 18px 24px 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+    padding: 15px 28px 18px;
 }
 
 .progress-card h2 {
@@ -320,43 +318,80 @@ a {
     text-transform: uppercase;
     text-align: center;
     font-weight: 400;
-    font-size: 1.45rem;
-    color: var(--orange);
-    margin-bottom: 14px;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
 }
 
 .progress-comparison {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-    width: 100%;
-    align-items: stretch;
+    grid-template-columns: 1fr 70px 1fr;
+    align-items: center;
+    gap: 20px;
 }
 
 .writing-sample {
-    width: 100%;
-    min-height: 190px;
-    overflow: hidden;
-    border-radius: 12px;
-    background: #efe5d8;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
 }
 
-.progress-image {
-    display: block;
-    width: 100%;
-    height: 190px;
-    object-fit: contain;
-    object-position: center;
-    background: #efe5d8;
+.sample-label {
+    position: absolute;
+    z-index: 2;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-transform: uppercase;
+    padding: 4px 30px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+}
+
+.sample-label.before {
+    background: #9c351e;
+}
+
+.sample-label.after {
+    background: #6b7436;
+}
+
+.sample-paper {
+    min-height: 130px;
+    padding: 25px 25px 15px;
+    border-radius: 12px;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 24px,
+            rgba(99, 133, 176, 0.16) 25px
+        ),
+        #f4e8d8;
+}
+
+.sample-paper p {
+    color: #3e5271;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.progress-arrow {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--green-dark);
+    color: white;
+    display: grid;
+    place-items: center;
+    margin: auto;
+    font-size: 2rem;
 }
 
 .progress-caption {
     text-align: center;
-    margin-top: 12px;
-    color: rgba(255, 250, 245, 0.88);
-    font-size: 0.95rem;
+    margin-top: 10px;
 }
+
 
 /* APPROCHE */
 
@@ -765,65 +800,117 @@ a {
     }
 }
 
-/* ZOOM DES EXEMPLES D'ÉCRITURE */
+/* AVIS GOOGLE */
 
-.progress-image {
-    cursor: zoom-in;
-}
-
-body.modal-open {
-    overflow: hidden;
-}
-
-.progress-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 36px;
-    background: rgba(0, 0, 0, 0.88);
-}
-
-.progress-lightbox.open {
-    display: flex;
-}
-
-.progress-lightbox img {
-    display: block;
-    max-width: min(94vw, 1500px);
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
+.reviews-section {
+    padding: 52px 0;
     background: var(--cream);
-    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+    color: var(--text-dark);
 }
 
-.progress-lightbox-close {
-    position: fixed;
-    top: 18px;
-    right: 26px;
-    z-index: 10000;
-    border: 0;
-    background: transparent;
-    color: white;
-    font-size: 48px;
-    line-height: 1;
-    cursor: pointer;
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 26px;
+}
+
+.reviews-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.google-rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 12px 18px;
+    border: 1px solid rgba(0, 47, 47, 0.14);
+    border-radius: 999px;
+    background: rgba(255, 250, 245, 0.72);
+}
+
+.google-rating strong {
+    font-size: 1.35rem;
+    color: var(--green-dark);
+}
+
+.review-stars {
+    color: var(--orange);
+    letter-spacing: 0.08em;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    padding: 24px;
+    border-radius: var(--radius);
+    background: var(--white);
+    color: var(--text-dark);
+    border: 1px solid rgba(0, 47, 47, 0.10);
+    box-shadow: 0 10px 30px rgba(0, 47, 47, 0.07);
+}
+
+.review-card p {
+    margin: 13px 0 20px;
+    line-height: 1.65;
+}
+
+.review-card footer {
+    margin-top: auto;
+    font-weight: 700;
+    color: var(--green);
+}
+
+.reviews-action {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.google-reviews-link {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: var(--green);
+    color: var(--white);
+    font-weight: 700;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.google-reviews-link:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+@media (max-width: 900px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .review-card {
+        min-height: 0;
+    }
 }
 
 @media (max-width: 760px) {
-    .progress-lightbox {
-        padding: 18px;
+    .reviews-header {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
-    .progress-lightbox-close {
-        top: 10px;
-        right: 16px;
-        font-size: 42px;
+    .google-rating {
+        border-radius: 14px;
     }
 }
 
