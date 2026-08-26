@@ -914,3 +914,340 @@ a {
     }
 }
 
+/* CABINETS + TARIFS */
+
+.cabinet-map {
+    min-height: 170px;
+    border-radius: 18px;
+    padding: 18px;
+    background:
+        radial-gradient(circle at 22% 36%, rgba(233,149,24,.22) 0 5px, transparent 6px),
+        radial-gradient(circle at 72% 68%, rgba(233,149,24,.22) 0 5px, transparent 6px),
+        linear-gradient(145deg, #073d3b, #31534b);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.cabinet-map-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+}
+
+.cabinet-map-points {
+    display: grid;
+    gap: 9px;
+}
+
+.map-point {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 700;
+    transition: color .2s ease, transform .2s ease;
+}
+
+.map-point:hover {
+    color: var(--orange);
+    transform: translateX(3px);
+}
+
+.map-pin {
+    color: var(--orange);
+    font-size: 1.15rem;
+}
+
+.map-hint {
+    font-size: .75rem;
+    opacity: .75;
+}
+
+.region-details strong {
+    color: var(--green-dark);
+}
+
+.region-details div p {
+    margin-top: 3px;
+    line-height: 1.35;
+}
+
+.tarif-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.tarif-price {
+    flex-shrink: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--orange-dark);
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+@media (max-width: 760px) {
+    .tarif-card {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+
+/* AJUSTEMENTS 25/08 — progrès, carte cabinets, harmonie couleurs */
+.progress-comparison {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+.writing-sample {
+    min-width: 0;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #efe5d9;
+}
+.progress-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    cursor: zoom-in;
+}
+.reflexes-card {
+    background: linear-gradient(120deg, #7a461d, #a65a1b 55%, #5e4328);
+}
+.region-content {
+    grid-template-columns: minmax(260px, .95fr) minmax(0, 1.35fr);
+    gap: 42px;
+    align-items: center;
+}
+.cabinet-map {
+    min-height: 190px;
+    padding: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background: var(--cream-dark);
+    border: 1px solid rgba(0, 47, 47, .12);
+}
+.cabinet-map iframe {
+    width: 100%;
+    height: 165px;
+    border: 0;
+    display: block;
+}
+.map-secondary-link {
+    padding: 9px 12px;
+    text-align: center;
+    background: var(--green);
+    color: var(--white);
+    font-size: .78rem;
+    font-weight: 700;
+}
+.map-secondary-link:hover { color: var(--orange); }
+.region-details {
+    padding-left: 10px;
+    gap: 20px;
+}
+@media (max-width: 760px) {
+    .progress-comparison { grid-template-columns: 1fr; }
+    .writing-sample { height: auto; min-height: 150px; }
+    .progress-image { height: auto; max-height: 260px; }
+    .region-content { grid-template-columns: 1fr; gap: 24px; }
+    .region-details { padding-left: 0; }
+}
+
+/* À PROPOS */
+
+.about-intro {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 70px;
+    align-items: end;
+    margin-bottom: 38px;
+}
+
+.about-intro h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    font-weight: 400;
+    line-height: 1.02;
+    color: var(--green-dark);
+}
+
+.about-lead {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    padding-bottom: 5px;
+}
+
+.about-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.about-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+    padding: 30px 34px;
+    border-radius: var(--radius);
+    background: var(--white);
+    border: 1px solid rgba(0, 47, 47, .10);
+    box-shadow: 0 10px 28px rgba(0, 47, 47, .06);
+}
+
+.about-number {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--orange-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+}
+
+.about-card h3 {
+    max-width: 520px;
+    margin-bottom: 14px;
+    color: var(--green-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+}
+
+.about-card p {
+    line-height: 1.7;
+}
+
+.about-evolution {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: 55px;
+    margin-top: 18px;
+    padding: 34px;
+    border-radius: var(--radius);
+    background: var(--green);
+    color: var(--white);
+}
+
+.about-evolution-title h3 {
+    margin-top: 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.about-evolution-text {
+    display: grid;
+    gap: 15px;
+    line-height: 1.7;
+}
+
+.about-signature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+    margin-top: 18px;
+    padding: 25px 32px;
+    border-left: 5px solid var(--orange);
+    background: var(--cream-dark);
+}
+
+.about-signature span {
+    max-width: 600px;
+    color: var(--green-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.45rem, 2.3vw, 2rem);
+    line-height: 1.1;
+}
+
+.about-signature p {
+    max-width: 520px;
+    line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+    .about-intro,
+    .about-columns,
+    .about-evolution {
+        grid-template-columns: 1fr;
+    }
+
+    .about-intro {
+        gap: 20px;
+    }
+
+    .about-evolution {
+        gap: 24px;
+        padding: 26px;
+    }
+
+    .about-signature {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+.about-lead p + p,
+.about-card p + p,
+.about-text-block p + p,
+.about-signature p + p {
+    margin-top: 12px;
+}
+
+.about-text-block {
+    margin-top: 18px;
+    padding: 28px 34px;
+    border-radius: var(--radius);
+    background: var(--cream-dark);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+.about-signature > div {
+    flex: 1;
+}
+
+.about-signature > div:last-child {
+    max-width: 650px;
+}
+
+
+
+/* ===== À PROPOS V2 — grille simple et responsive ===== */
+.about-section { padding: 72px 0; }
+.about-intro { display:grid; grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr); gap:64px; align-items:end; margin-bottom:34px; }
+.about-intro h2 { margin:0; max-width:650px; }
+.about-lead { max-width:680px; }
+.about-lead p:last-child { margin-bottom:0; }
+.about-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px; }
+.about-grid .about-card { margin:0; min-width:0; min-height:0; height:auto; background:#fffaf3; border:1px solid rgba(24,58,54,.08); border-radius:18px; padding:30px; box-shadow:none; }
+.about-grid .about-card-wide { grid-column:1 / -1; }
+.about-grid .about-number, .about-grid .about-label { display:block; margin-bottom:14px; color:#bd4a12; font-family:Georgia, 'Times New Roman', serif; font-size:1.15rem; font-weight:700; }
+.about-grid .about-label { color:#d98200; text-transform:uppercase; letter-spacing:.035em; font-size:.92rem; }
+.about-grid .about-card h3 { margin:0 0 16px; color:#0b3d38; font-family:Georgia, 'Times New Roman', serif; font-size:1.45rem; line-height:1.18; }
+.about-grid .about-card p { margin:0 0 13px; line-height:1.62; }
+.about-grid .about-card p:last-child { margin-bottom:0; }
+.about-grid .about-final { border-left:4px solid #e99518; padding-left:28px; }
+.about-grid .about-final h3 { font-size:1.65rem; }
+@media (max-width: 900px) {
+  .about-section { padding:54px 0; }
+  .about-intro { grid-template-columns:1fr; gap:22px; margin-bottom:26px; }
+  .about-grid { grid-template-columns:1fr; }
+  .about-grid .about-card-wide { grid-column:auto; }
+}
+@media (max-width: 600px) {
+  .about-section { padding:42px 0; }
+  .about-grid { gap:14px; }
+  .about-grid .about-card { padding:22px; border-radius:14px; }
+  .about-grid .about-card h3 { font-size:1.3rem; }
+  .about-grid .about-final h3 { font-size:1.45rem; }
+}
