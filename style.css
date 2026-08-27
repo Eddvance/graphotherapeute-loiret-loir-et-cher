@@ -1284,33 +1284,151 @@ body.modal-open {
     }
 }
 
+/* =========================================================
+   ACCOMPAGNEMENT — DÉTAIL
+   ========================================================= */
 
-/* ACCOMPAGNEMENT — DÉTAIL */
-.accompagnement-detail-section{padding:80px 0;background:var(--cream-dark);color:var(--text-dark)}
-.accompagnement-detail-intro{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:20px 70px;align-items:end;margin-bottom:30px}
-.accompagnement-detail-intro .section-kicker{grid-column:1/-1}
-.accompagnement-detail-intro h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.3rem,4vw,4rem);font-weight:400;line-height:1.02;color:var(--green-dark)}
-.accompagnement-detail-hook{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.45rem,2.3vw,2rem);line-height:1.25;color:var(--orange-dark)}
-.accompagnement-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.accompagnement-detail-card{min-width:0;padding:30px 34px;border-radius:var(--radius);background:var(--white);border:1px solid rgba(0,47,47,.10);box-shadow:0 10px 28px rgba(0,47,47,.06)}
-.accompagnement-detail-card-wide{grid-column:1/-1}
-.accompagnement-detail-card h3{margin-bottom:15px;color:var(--green-dark);font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.45rem,2.2vw,2rem);font-weight:400;line-height:1.12}
-.accompagnement-detail-card p,.accompagnement-detail-card li{line-height:1.7}
-.accompagnement-detail-card p+p{margin-top:12px}
-.accompagnement-detail-card ul{margin-top:12px;padding-left:22px}
-.accompagnement-detail-card li+li{margin-top:7px}
-.accompagnement-detail-card li::marker{color:var(--orange-dark)}
-.accompagnement-detail-emphasis{background:var(--cream)}
-.accompagnement-detail-dark{background:var(--green);color:var(--white)}
-.accompagnement-detail-dark h3{color:var(--orange)}
-.accompagnement-detail-keywords{margin-top:18px!important;padding-top:18px;border-top:1px solid rgba(255,255,255,.22);font-family:Georgia,"Times New Roman",serif;font-size:1.2rem}
-.accompagnement-detail-closing{display:flex;flex-direction:column;justify-content:center}
-.accompagnement-detail-quote{margin-top:22px!important;padding-left:18px;border-left:4px solid var(--orange);color:var(--green-dark);font-family:Georgia,"Times New Roman",serif;font-size:1.35rem}
-.accompagnement-detail-signature{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:18px;overflow:hidden;border-radius:var(--radius);background:rgba(255,255,255,.25)}
-.accompagnement-detail-signature span{padding:24px 18px;background:var(--green-dark);color:var(--cream);text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.15rem,1.8vw,1.55rem)}
-@media(max-width:760px){.accompagnement-detail-section{padding:55px 0}.accompagnement-detail-intro,.accompagnement-detail-grid,.accompagnement-detail-signature{grid-template-columns:1fr}.accompagnement-detail-intro{gap:18px}.accompagnement-detail-card-wide{grid-column:auto}.accompagnement-detail-card{padding:25px}}
+.accompagnement-detail-section {
+    padding: 80px 0;
+    background: var(--cream-dark);
+    color: var(--text-dark);
+}
 
-/* RESSOURCES VIDÉO — carrousel Instagram */
+.accompagnement-detail-intro {
+    max-width: 1050px;
+    margin-bottom: 34px;
+}
+
+.accompagnement-detail-intro .section-kicker {
+    margin-bottom: 6px;
+}
+
+.accompagnement-detail-intro h2 {
+    max-width: 900px;
+    margin-bottom: 14px;
+    color: var(--green-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    font-weight: 400;
+    line-height: 1.02;
+}
+
+.accompagnement-detail-hook {
+    max-width: 760px;
+    color: var(--orange-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 2.1vw, 1.9rem);
+    line-height: 1.3;
+}
+
+.accompagnement-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+}
+
+.accompagnement-detail-card {
+    min-width: 0;
+    padding: 30px 34px;
+    border: 1px solid rgba(0, 47, 47, .10);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: 0 10px 28px rgba(0, 47, 47, .06);
+}
+
+.accompagnement-detail-card-wide {
+    grid-column: 1 / -1;
+}
+
+.accompagnement-detail-card h3 {
+    margin-bottom: 15px;
+    color: var(--green-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.4rem, 2vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.accompagnement-detail-card p,
+.accompagnement-detail-card li {
+    line-height: 1.7;
+}
+
+.accompagnement-detail-card p + p {
+    margin-top: 12px;
+}
+
+.accompagnement-detail-card ul {
+    margin-top: 12px;
+    padding-left: 22px;
+}
+
+.accompagnement-detail-card li + li {
+    margin-top: 7px;
+}
+
+.accompagnement-detail-card li::marker {
+    color: var(--orange-dark);
+}
+
+.accompagnement-detail-emphasis {
+    background: var(--cream);
+}
+
+.accompagnement-detail-dark {
+    background: var(--green);
+    color: var(--white);
+}
+
+.accompagnement-detail-dark h3 {
+    color: var(--orange);
+}
+
+.accompagnement-detail-keywords {
+    margin-top: 18px !important;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, .22);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+}
+
+.accompagnement-detail-closing {
+    align-self: start;
+}
+
+.accompagnement-detail-quote {
+    margin-top: 22px !important;
+    padding-left: 18px;
+    border-left: 4px solid var(--orange);
+    color: var(--green-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+}
+
+.accompagnement-detail-signature {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 18px;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, .25);
+}
+
+.accompagnement-detail-signature span {
+    padding: 24px 18px;
+    background: var(--green-dark);
+    color: var(--cream);
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+}
+
+
+/* =========================================================
+   RESSOURCES VIDÉO — CARROUSEL INSTAGRAM
+   ========================================================= */
 
 .resources-video-heading {
     margin-bottom: 28px;
@@ -1319,7 +1437,7 @@ body.modal-open {
 .instagram-carousel {
     position: relative;
     display: grid;
-    grid-template-columns: 56px minmax(0, 760px) 56px;
+    grid-template-columns: 56px minmax(0, 720px) 56px;
     justify-content: center;
     align-items: center;
     gap: 18px;
@@ -1327,6 +1445,10 @@ body.modal-open {
 
 .instagram-carousel-stage {
     min-width: 0;
+    padding: 22px;
+    border-radius: calc(var(--radius) + 4px);
+    background: var(--green);
+    box-shadow: 0 12px 34px rgba(0, 47, 47, .12);
 }
 
 .instagram-slide {
@@ -1338,14 +1460,13 @@ body.modal-open {
 }
 
 .instagram-player {
-    width: 100%;
-    max-width: 560px;
+    width: min(100%, 560px);
     margin: 0 auto;
+    padding: 8px;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .16);
     border-radius: var(--radius);
-    background: var(--white);
-    border: 1px solid rgba(0, 47, 47, .10);
-    box-shadow: 0 10px 28px rgba(0, 47, 47, .07);
+    background: #d9cbbd;
 }
 
 .instagram-player iframe {
@@ -1353,14 +1474,16 @@ body.modal-open {
     width: 100%;
     height: 680px;
     border: 0;
-    background: var(--white);
+    border-radius: 11px;
+    background: var(--cream);
 }
 
 .instagram-video-title {
-    max-width: 700px;
+    max-width: 680px;
     margin: 16px auto 0;
+    padding: 0 12px 2px;
+    color: var(--cream);
     text-align: center;
-    color: var(--green-dark);
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.15rem;
     line-height: 1.35;
@@ -1369,14 +1492,15 @@ body.modal-open {
 .instagram-carousel-arrow {
     width: 52px;
     height: 52px;
+    padding: 0;
     border: 0;
     border-radius: 50%;
     background: var(--green);
     color: var(--white);
+    cursor: pointer;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 2.2rem;
     line-height: 1;
-    cursor: pointer;
     transition: transform .2s ease, background .2s ease;
 }
 
@@ -1407,16 +1531,46 @@ body.modal-open {
     background: var(--orange);
 }
 
+
+/* =========================================================
+   RESPONSIVE — ACCOMPAGNEMENT + RESSOURCES
+   ========================================================= */
+
 @media (max-width: 760px) {
+    .accompagnement-detail-section {
+        padding: 55px 0;
+    }
+
+    .accompagnement-detail-grid,
+    .accompagnement-detail-signature {
+        grid-template-columns: 1fr;
+    }
+
+    .accompagnement-detail-card-wide {
+        grid-column: auto;
+    }
+
+    .accompagnement-detail-card {
+        padding: 25px;
+    }
+
     .instagram-carousel {
         grid-template-columns: 42px minmax(0, 1fr) 42px;
         gap: 8px;
+    }
+
+    .instagram-carousel-stage {
+        padding: 12px;
     }
 
     .instagram-carousel-arrow {
         width: 40px;
         height: 40px;
         font-size: 1.8rem;
+    }
+
+    .instagram-player {
+        padding: 5px;
     }
 
     .instagram-player iframe {
@@ -1452,3 +1606,447 @@ body.modal-open {
     }
 }
 
+/* =========================================================
+   AJUSTEMENTS VISUELS — séparation sections / accompagnement / ressources
+   ========================================================= */
+
+/* Séparation nette mais douce entre Avis Google et Qui suis-je */
+.about-section {
+    background: #dfe8e3;
+    border-top: 1px solid rgba(0, 47, 47, .10);
+}
+
+/* En-tête Accompagnement : bloc visuel clair et stable */
+.accompagnement-detail-intro {
+    max-width: none;
+    margin-bottom: 24px;
+    padding: 30px 34px;
+    border-radius: var(--radius);
+    background: var(--green-dark);
+    color: var(--white);
+}
+
+.accompagnement-detail-intro .section-kicker {
+    margin-bottom: 8px;
+    color: var(--orange);
+}
+
+.accompagnement-detail-intro h2 {
+    max-width: 980px;
+    margin: 0 0 12px;
+    color: var(--cream);
+    font-size: clamp(2rem, 3.4vw, 3.35rem);
+    line-height: 1.05;
+}
+
+.accompagnement-detail-hook {
+    max-width: 800px;
+    margin: 0;
+    color: var(--orange);
+    font-size: clamp(1.25rem, 1.9vw, 1.7rem);
+}
+
+/* Ressources : supprimer l'effet "grand blanc" autour de la vidéo */
+.resources-section {
+    background: var(--green-dark);
+    color: var(--white);
+}
+
+.resources-section .section-kicker {
+    color: var(--orange);
+}
+
+.resources-video-heading h2 {
+    color: var(--cream);
+}
+
+.instagram-carousel-stage {
+    background: #31534b;
+    border: 1px solid rgba(255, 255, 255, .10);
+    box-shadow: none;
+}
+
+.instagram-player {
+    background: #243f3b;
+    border: 1px solid rgba(255, 255, 255, .12);
+}
+
+.instagram-player iframe {
+    background: #243f3b;
+}
+
+.instagram-carousel-dot {
+    background: rgba(255,255,255,.30);
+}
+
+.instagram-carousel-dot.active {
+    background: var(--orange);
+}
+
+.instagram-video-title {
+    color: var(--cream);
+}
+
+.instagram-carousel-arrow {
+    background: var(--orange);
+    color: var(--green-dark);
+}
+
+.instagram-carousel-arrow:hover {
+    background: #f1aa3b;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+    .accompagnement-detail-intro {
+        padding: 24px;
+    }
+}
+
+/* =========================================================
+   ACCOMPAGNEMENT — CORRECTION DE MISE EN PAGE
+   Flux continu : aucune carte en quinconce, aucun trou vertical.
+   ========================================================= */
+
+.accompagnement-detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+}
+
+.accompagnement-detail-card,
+.accompagnement-detail-card-wide,
+.accompagnement-detail-emphasis,
+.accompagnement-detail-dark,
+.accompagnement-detail-closing {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    align-self: stretch;
+}
+
+.accompagnement-detail-card-wide {
+    grid-column: auto;
+}
+
+.accompagnement-detail-card {
+    padding: 30px 34px;
+}
+
+.accompagnement-detail-card h3 {
+    max-width: none;
+}
+
+.accompagnement-detail-card p {
+    max-width: none;
+}
+
+/* Les listes longues restent lisibles sans créer de colonne vide à côté. */
+.accompagnement-detail-card ul {
+    max-width: 1000px;
+}
+
+/* La signature reste sur une ligne sur desktop. */
+.accompagnement-detail-signature {
+    width: 100%;
+    margin-top: 18px;
+}
+
+@media (max-width: 760px) {
+    .accompagnement-detail-grid {
+        gap: 14px;
+    }
+
+    .accompagnement-detail-card {
+        padding: 24px;
+    }
+}
+
+/* =========================================================
+   CORRECTIFS VISUELS FORCÉS — 27/08 16:45
+   ========================================================= */
+
+/* QUI SUIS-JE : le texte d'intro de droite est une carte */
+.about-section .about-lead {
+    display: block;
+    padding: 28px 32px !important;
+    border: 1px solid rgba(0, 47, 47, .14) !important;
+    border-radius: 18px !important;
+    background: #fffaf5 !important;
+    box-shadow: 0 10px 28px rgba(0, 47, 47, .07) !important;
+}
+
+/* QUI SUIS-JE : le texte à droite de la signature est aussi une carte */
+.about-section .about-signature p {
+    display: block;
+    padding: 24px 28px !important;
+    border: 1px solid rgba(0, 47, 47, .14) !important;
+    border-radius: 18px !important;
+    background: #fffaf5 !important;
+    box-shadow: 0 10px 28px rgba(0, 47, 47, .07) !important;
+}
+
+/* ACCOMPAGNEMENT : changement de fond franchement visible */
+#accompagnement-detail.accompagnement-detail-section {
+    background: #d9e3de !important;
+    border-top: 10px solid #31534b !important;
+}
+
+/* Le header vert d'Accompagnement reste clairement détaché */
+#accompagnement-detail .accompagnement-detail-intro {
+    background: #002f2f !important;
+    color: #fffaf5 !important;
+}
+
+#accompagnement-detail .accompagnement-detail-intro h2 {
+    color: #fffaf5 !important;
+}
+
+#accompagnement-detail .accompagnement-detail-hook,
+#accompagnement-detail .section-kicker {
+    color: #e99518 !important;
+}
+
+@media (max-width: 760px) {
+    .about-section .about-lead,
+    .about-section .about-signature p {
+        padding: 22px !important;
+    }
+}
+
+/* =========================================================
+   DERNIERS AJUSTEMENTS VISUELS
+   ========================================================= */
+
+/* Fin de QUI SUIS-JE : un seul bloc cohérent, comme le bloc au-dessus */
+.about-signature {
+    display: grid !important;
+    grid-template-columns: 1.15fr .85fr !important;
+    gap: 0 !important;
+    margin-top: 18px !important;
+    overflow: hidden !important;
+    border-radius: var(--radius) !important;
+    background: var(--green) !important;
+    box-shadow: 0 10px 28px rgba(0, 47, 47, .08) !important;
+}
+
+.about-signature > span {
+    display: flex !important;
+    align-items: center !important;
+    padding: 28px 34px !important;
+    background: var(--green) !important;
+    color: var(--cream) !important;
+    border-left: 0 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: clamp(1.55rem, 2.2vw, 2rem) !important;
+    line-height: 1.12 !important;
+}
+
+.about-section .about-signature > p {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 28px 34px !important;
+    border: 0 !important;
+    border-left: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 0 !important;
+    background: #31534b !important;
+    color: var(--cream) !important;
+    box-shadow: none !important;
+    line-height: 1.55 !important;
+}
+
+/* RESSOURCES VIDEO : plus compact, mieux intégré au site */
+.resources-section {
+    padding: 64px 0 72px !important;
+    background: var(--green) !important;
+}
+
+.resources-section .container {
+    max-width: 1100px !important;
+}
+
+.resources-video-heading {
+    text-align: center !important;
+    margin-bottom: 24px !important;
+}
+
+.resources-video-heading h2 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem) !important;
+}
+
+.instagram-carousel {
+    grid-template-columns: 48px minmax(0, 580px) 48px !important;
+    gap: 14px !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.instagram-carousel-stage {
+    padding: 14px !important;
+    border-radius: 22px !important;
+    background: #31534b !important;
+    border: 1px solid rgba(255,255,255,.10) !important;
+    box-shadow: 0 16px 34px rgba(0,0,0,.14) !important;
+}
+
+.instagram-player {
+    width: min(100%, 500px) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 16px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+.instagram-player iframe {
+    display: block !important;
+    width: 100% !important;
+    height: 610px !important;
+    border-radius: 16px !important;
+}
+
+.instagram-carousel-arrow {
+    width: 46px !important;
+    height: 46px !important;
+    background: var(--orange) !important;
+    color: var(--green-dark) !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.12) !important;
+}
+
+.instagram-video-title {
+    max-width: 560px !important;
+    margin: 14px auto 0 !important;
+    text-align: center !important;
+    color: var(--cream) !important;
+}
+
+@media (max-width: 760px) {
+    .about-signature {
+        grid-template-columns: 1fr !important;
+    }
+
+    .about-section .about-signature > p {
+        border-left: 0 !important;
+        border-top: 1px solid rgba(255,255,255,.18) !important;
+    }
+
+    .instagram-carousel {
+        grid-template-columns: 40px minmax(0, 1fr) 40px !important;
+        gap: 8px !important;
+    }
+
+    .instagram-player iframe {
+        height: 560px !important;
+    }
+}
+
+
+
+/* =========================================================
+   CORRECTIONS CIBLÉES — 27/08 17:05
+   ========================================================= */
+
+/* QUI SUIS-JE — deux colonnes visuellement équilibrées */
+.about-intro {
+    align-items: stretch !important;
+}
+.about-intro > div,
+.about-section .about-lead {
+    min-height: 210px !important;
+}
+.about-intro > div {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+.about-section .about-lead {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* QUI SUIS-JE — bandeau final : aucun encadré parasite à droite */
+.about-signature {
+    grid-template-columns: 1fr 1fr !important;
+    background: var(--green) !important;
+    border-left: 5px solid var(--orange) !important;
+}
+.about-signature > span,
+.about-section .about-signature > p {
+    background: transparent !important;
+    color: var(--cream) !important;
+}
+.about-section .about-signature > p {
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+/* RESSOURCES VIDÉO — section claire, compacte, sans grand aplat vert */
+.resources-section {
+    padding: 46px 0 52px !important;
+    background: var(--cream) !important;
+    color: var(--text-dark) !important;
+}
+.resources-section .container {
+    width: min(94%, var(--max-width)) !important;
+    max-width: 1180px !important;
+}
+.resources-video-heading {
+    max-width: none !important;
+    margin: 0 0 20px !important;
+    text-align: left !important;
+}
+.resources-video-heading h2 {
+    color: var(--green-dark) !important;
+    font-size: clamp(2rem, 3.3vw, 3rem) !important;
+}
+.instagram-carousel {
+    grid-template-columns: 44px minmax(0, 470px) 44px !important;
+    gap: 14px !important;
+}
+.instagram-carousel-stage {
+    padding: 10px !important;
+    background: var(--white) !important;
+    border: 1px solid rgba(0,47,47,.12) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 10px 28px rgba(0,47,47,.08) !important;
+}
+.instagram-player {
+    width: 100% !important;
+    border-radius: 12px !important;
+}
+.instagram-player iframe {
+    height: 500px !important;
+    border-radius: 12px !important;
+    background: var(--white) !important;
+}
+.instagram-video-title {
+    color: var(--green-dark) !important;
+}
+.instagram-carousel-dot {
+    background: rgba(0,47,47,.25) !important;
+}
+.instagram-carousel-dot.active {
+    background: var(--orange) !important;
+}
+
+@media (max-width: 760px) {
+    .about-intro > div,
+    .about-section .about-lead {
+        min-height: 0 !important;
+    }
+    .about-signature {
+        grid-template-columns: 1fr !important;
+    }
+    .instagram-carousel {
+        grid-template-columns: 38px minmax(0,1fr) 38px !important;
+    }
+    .instagram-player iframe {
+        height: 520px !important;
+    }
+}
