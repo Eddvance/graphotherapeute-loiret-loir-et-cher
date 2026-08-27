@@ -475,6 +475,64 @@
     </section>
 
 
+
+    <section class="resources-section" id="ressources">
+      <div class="container">
+        <div class="section-heading resources-video-heading">
+          <p class="section-kicker">Ressources</p>
+          <h2>Ressources vidéo</h2>
+        </div>
+
+        <div class="instagram-carousel" aria-label="Ressources vidéo Instagram">
+          <button class="instagram-carousel-arrow instagram-carousel-prev"
+                  type="button"
+                  aria-label="Vidéo précédente">‹</button>
+
+          <div class="instagram-carousel-stage">
+            <article class="instagram-slide active"
+                     data-src="https://www.instagram.com/reel/DZIx2GZsQee/embed">
+              <div class="instagram-player">
+                <iframe
+                  src="https://www.instagram.com/reel/DZIx2GZsQee/embed"
+                  title="Ressource vidéo Instagram 1"
+                  loading="lazy"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </article>
+
+            <article class="instagram-slide"
+                     data-src="https://www.instagram.com/tv/DYxZmJ3Cit0/embed">
+              <div class="instagram-player"></div>
+              <p class="instagram-video-title">Les astuces pour mieux écrire. Partie 2: le positionnement de la main sous la ligne</p>
+            </article>
+
+            <article class="instagram-slide"
+                     data-src="https://www.instagram.com/reel/DY2fQM6MQgf/embed">
+              <div class="instagram-player"></div>
+            </article>
+
+            <article class="instagram-slide"
+                     data-src="https://www.instagram.com/reel/DZI0Ci3MR1U/embed">
+              <div class="instagram-player"></div>
+              <p class="instagram-video-title">Activité de mobilité digitale et de dissociation des doigts</p>
+            </article>
+          </div>
+
+          <button class="instagram-carousel-arrow instagram-carousel-next"
+                  type="button"
+                  aria-label="Vidéo suivante">›</button>
+
+          <div class="instagram-carousel-dots" aria-label="Navigation des vidéos">
+            <button class="instagram-carousel-dot active" type="button" aria-label="Afficher la vidéo 1"></button>
+            <button class="instagram-carousel-dot" type="button" aria-label="Afficher la vidéo 2"></button>
+            <button class="instagram-carousel-dot" type="button" aria-label="Afficher la vidéo 3"></button>
+            <button class="instagram-carousel-dot" type="button" aria-label="Afficher la vidéo 4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="tarifs-section" id="tarifs">
       <div class="container">
 
@@ -500,25 +558,7 @@
       </div>
     </section>
 
-
-    <section class="resources-section" id="ressources">
-      <div class="container">
-
-        <div class="section-heading">
-          <p class="section-kicker">Ressources</p>
-          <h2>Mieux comprendre la graphothérapie</h2>
-        </div>
-
-        <p>
-          Cette partie pourra accueillir des conseils, articles ou ressources
-          destinés aux parents, adolescents et adultes.
-        </p>
-
-      </div>
-    </section>
-
-
-    <section class="contact-section" id="contact">
+<section class="contact-section" id="contact">
       <div class="container contact-grid">
 
         <div>
@@ -648,6 +688,50 @@
       closeProgressImage();
     }
   });
+
+
+  const instagramSlides = document.querySelectorAll('.instagram-slide');
+  const instagramDots = document.querySelectorAll('.instagram-carousel-dot');
+  const instagramPrev = document.querySelector('.instagram-carousel-prev');
+  const instagramNext = document.querySelector('.instagram-carousel-next');
+  let currentInstagramSlide = 0;
+
+  function ensureInstagramLoaded(index) {
+    const slide = instagramSlides[index];
+    const player = slide.querySelector('.instagram-player');
+
+    if (player.querySelector('iframe')) return;
+
+    const iframe = document.createElement('iframe');
+    iframe.src = slide.dataset.src;
+    iframe.title = `Ressource vidéo Instagram ${index + 1}`;
+    iframe.loading = 'lazy';
+    iframe.allowFullscreen = true;
+    player.appendChild(iframe);
+  }
+
+  function showInstagramSlide(index) {
+    currentInstagramSlide = (index + instagramSlides.length) % instagramSlides.length;
+
+    instagramSlides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === currentInstagramSlide);
+    });
+
+    instagramDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentInstagramSlide);
+    });
+
+    ensureInstagramLoaded(currentInstagramSlide);
+  }
+
+  if (instagramSlides.length) {
+    instagramPrev.addEventListener('click', () => showInstagramSlide(currentInstagramSlide - 1));
+    instagramNext.addEventListener('click', () => showInstagramSlide(currentInstagramSlide + 1));
+
+    instagramDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showInstagramSlide(index));
+    });
+  }
 
 </script>
 
