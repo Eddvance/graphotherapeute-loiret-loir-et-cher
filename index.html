@@ -28,7 +28,12 @@
         </div>
       </a>
 
-      <nav class="main-nav" aria-label="Navigation principale">
+      <!-- MOBILE MENU TOGGLE (ChatGPT) -->
+      <button class="mobile-menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="main-navigation" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+      </button>
+      <!-- END MOBILE MENU TOGGLE -->
+      <nav id="main-navigation" class="main-nav" aria-label="Navigation principale">
         <a href="#accueil" class="active">Accueil</a>
         <a href="#quisuisje">Qui suis je ?</a>
         <a href="#accompagnement-detail">Accompagnements</a>
@@ -734,6 +739,39 @@
   }
 
 </script>
+
+
+  <script>
+    // MOBILE MENU (ChatGPT)
+    (() => {
+      const button = document.querySelector('.mobile-menu-toggle');
+      const nav = document.querySelector('.main-nav');
+      if (!button || !nav) return;
+
+      const closeMenu = () => {
+        nav.classList.remove('is-open');
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-label', 'Ouvrir le menu');
+        const icon = button.querySelector('span');
+        if (icon) icon.textContent = '☰';
+      };
+
+      button.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+        const icon = button.querySelector('span');
+        if (icon) icon.textContent = open ? '×' : '☰';
+      });
+
+      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 520) closeMenu();
+      });
+    })();
+    // END MOBILE MENU (ChatGPT)
+  </script>
 
 </body>
 </html>
