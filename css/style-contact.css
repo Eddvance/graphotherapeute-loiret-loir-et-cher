@@ -121,3 +121,44 @@ body {
         padding: 24px 20px;
     }
 }
+
+.success-popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 47, 47, 0.65);
+    z-index: 1000;
+}
+
+.success-popup.show {
+    display: flex;
+}
+
+.success-popup-content {
+    width: min(90%, 420px);
+    padding: 32px;
+    background: #f5eee5;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.success-popup-content p {
+    margin: 0 0 24px;
+    color: #002f2f;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.success-popup-content button {
+    width: 100%;
+    padding: 14px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: #e99518;
+    color: #002f2f;
+    font-weight: 700;
+    cursor: pointer;
+}

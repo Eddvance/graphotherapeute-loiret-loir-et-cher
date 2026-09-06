@@ -47,6 +47,42 @@
         </section>
     </main>
 
+    <div class="success-popup" id="success-popup">
+        <div class="success-popup-content">
+            <p id="success-popup-message"></p>
+            <button type="button" id="success-popup-close">OK</button>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const sent = params.get("sent");
+
+        const popup = document.getElementById("success-popup");
+        const popupMessage = document.getElementById("success-popup-message");
+        const popupClose = document.getElementById("success-popup-close");
+
+        if (sent == "1") {
+            popupMessage.textContent = "Merci, votre demande a été envoyée";
+            popup.classList.add("show");
+
+            popupClose.addEventListener("click", () => {
+                window.location.href = "/";
+            });
+        }
+
+        if (sent == "0") {
+            popupMessage.textContent = "Une erreur est survenue lors de l'envoi. Veuillez réessayer.";
+            popup.classList.add("show");
+
+            popupClose.addEventListener("click", () => {
+                popup.classList.remove("show");
+                window.history.replaceState({}, "", "/contact.html");
+            });
+        }
+
+    </script>
+
 </body>
 
 </html>
