@@ -34,8 +34,6 @@ if ($phone !== "" && !preg_match('/^0[1-9][0-9]{8}$/', $phoneDigits)) {
     exit("numero de téléphone invalide.");
 }
 
-
-
 $to = "contact@graphotherapeute-loiret-loir-et-cher.fr";
 $subject = "Nouvelle demande de contact";
 
@@ -47,10 +45,10 @@ $message .= "Téléphone : " . ($phone !== "" ? $phone : "Non renseigné");
 $headers = "From: contact@graphotherapeute-loiret-loir-et-cher.fr\r\n";
 $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
 
-
 if (!mail($to, $subject, $message, $headers)) {
-    http_response_code(500);
-    exit("Erreur lors de l'envoi.");
+    header("Location: /contact.html?sent=0");
+    exit;
 }
 
-echo "Merci, votre demande a bien ete envoyée.";
+header("Location: /contact.html?sent=1");
+exit;
