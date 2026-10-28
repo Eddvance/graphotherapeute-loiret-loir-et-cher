@@ -2208,3 +2208,25 @@ body.modal-open {
 }
 /* === FIN IPAD UNIQUEMENT === */
 
+
+
+/* =========================================================
+   MENTIONS LÉGALES ET CONFIDENTIALITÉ — page dédiée
+   ========================================================= */
+/* Styles limités à cette page pour ne pas modifier le site existant. */
+.legal-page { background: #f5efe6; color: #202b29; min-height: 75vh; padding: 54px 20px 78px; }
+.legal-wrap { max-width: 940px; margin: 0 auto; }
+.legal-back { display: inline-block; margin-bottom: 26px; color: #164c44; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.legal-page h1, .legal-page h2 { font-family: Georgia, 'Times New Roman', serif; line-height: 1.2; }
+.legal-page h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; }
+.legal-page .legal-intro { font-size: 1.06rem; margin: 0 0 28px; }
+.legal-card { background: #fffdfa; border-radius: 15px; padding: clamp(20px, 4vw, 38px); margin: 20px 0; box-shadow: 0 2px 12px rgba(0,0,0,.05); }
+.legal-card h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: #17423b; margin: 0 0 20px; }
+.legal-card h3 { font-size: 1.12rem; margin: 22px 0 7px; }
+.legal-card p, .legal-card li { line-height: 1.7; }
+.legal-card ul { padding-left: 23px; }
+.legal-card a { color: #165c52; text-decoration: underline; overflow-wrap: anywhere; }
+.legal-card address { font-style: normal; line-height: 1.7; }
+.legal-muted { color: #505b57; font-size: .94rem; }
+.legal-page .legal-footer { border-top: 1px solid #c6c9c2; padding-top: 18px; margin-top: 32px; }
+@media (max-width: 600px) { .legal-page { padding-top: 30px; } }
