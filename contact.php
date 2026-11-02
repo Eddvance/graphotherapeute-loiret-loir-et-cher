@@ -5,12 +5,31 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
+foreach (["firstname", "lastname", "email", "phone"] as $field) {
+    if (isset($_POST[$field]) && !is_string($_POST[$field])) {
+        http_response_code(400);
+        exit("Donnes invalides.");
+    }
+}
 
 $firstname = trim($_POST["firstname"] ?? "");
 $lastname = trim($_POST["lastname"] ?? "");
 $email = trim($_POST["email"] ?? "");
 $phone = trim($_POST["phone"] ?? "");
 
+if (
+    strlen($firstname) > 50 || strlen($lastname) > 100 || strlen($email) > 254 || strlen($phone) > 20
+) {
+    http_response_code(400);
+    exit("les donnees saisies sont trop longues.");
+}
+
+foreach ([$firstname, $lastname, $email, $phone] as $value) {
+    if (preg_match('/[\x00-\x1F\x7F]/', $value)) {
+        http_response_code(400);
+        exit("Caracteres non autorises.");
+    }
+}
 
 if ($firstname == "" || $lastname == "") {
     http_response_code(400);
@@ -52,3 +71,4 @@ if (!mail($to, $subject, $message, $headers)) {
 
 header("Location: /contact.html?sent=1");
 exit;
+
