@@ -162,3 +162,11 @@ body {
     font-weight: 700;
     cursor: pointer;
 }
+
+.honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}

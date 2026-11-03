@@ -5,6 +5,11 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
+if (!empty($_POST["website"])) {
+    header("Location: /contact.html?sent=1");
+    exit;
+}
+
 foreach (["firstname", "lastname", "email", "phone"] as $field) {
     if (isset($_POST[$field]) && !is_string($_POST[$field])) {
         http_response_code(400);
