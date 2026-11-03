@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
-if (!empty($_POST["website"]) && $_POST["website"] !== "") {
+if (isset($_POST["website"]) && $_POST["website"] !== "") {
     header("Location: /contact.html?sent=1");
     exit;
 }
@@ -51,7 +51,7 @@ if ($email !== "" && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit("Adresse mail invalide");
 }
 
-$phoneDigits = str_replace(" ", "", $phone);
+$phoneDigits = preg_replace('/[ .-]/', '', $phone);
 
 if ($phone !== "" && !preg_match('/^0[1-9][0-9]{8}$/', $phoneDigits)) {
     http_response_code(400);
