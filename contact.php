@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
-if (!empty($_POST["website"])) {
+if (!empty($_POST["website"]) && $_POST["website"] !== "") {
     header("Location: /contact.html?sent=1");
     exit;
 }
