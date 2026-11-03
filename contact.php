@@ -5,6 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
+if (!empty($_POST["website"])) {
+    header("Location: /contact.html?sent=1");
+    exit;
+}
 
 $firstname = trim($_POST["firstname"] ?? "");
 $lastname = trim($_POST["lastname"] ?? "");
