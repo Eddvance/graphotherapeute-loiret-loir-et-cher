@@ -36,14 +36,8 @@
                         <input type="tel" id="phone" name="phone">
 
                         <div class="honeypot" aria-hidden="true">
-                            <label for ="website">Website</label>
-                            <input
-                                type="text"
-                                id="website"
-                                name="website"
-                                tabindex="-1"
-                                autocomplete="off"
-                            >    
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                         </div>
 
                         <button type="submit" class="contact-submit">
@@ -66,32 +60,44 @@
     </div>
 
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const sent = params.get("sent");
-
         const popup = document.getElementById("success-popup");
         const popupMessage = document.getElementById("success-popup-message");
         const popupClose = document.getElementById("success-popup-close");
+        const form = document.getElementById("contact-form");
+        let submissionSucceeded = false;
 
-        if (sent == "1") {
-            popupMessage.textContent = "Merci, votre demande a été envoyée";
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            submissionSucceeded = false;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(form)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success === true) {
+                    submissionSucceeded = true;
+                    popupMessage.textContent = "Merci, votre demande a été envoyée";
+                    form.reset();
+                } else {
+                    popupMessage.textContent = result.message || "Une erreur est survenue lors de l'envoi. Veuillez réessayer";
+                }
+            } catch (error) {
+                popupMessage.textContent = "Une erreur est survenue lors de l'envoi. Veuillez réessayer";
+            }
+
             popup.classList.add("show");
+        });
 
-            popupClose.addEventListener("click", () => {
-                window.location.href = "/";
-            });
-        }
-
-        if (sent == "0") {
-            popupMessage.textContent = "Une erreur est survenue lors de l'envoi. Veuillez réessayer.";
-            popup.classList.add("show");
-
-            popupClose.addEventListener("click", () => {
-                popup.classList.remove("show");
-                window.history.replaceState({}, "", "/contact.html");
-            });
-        }
-
+        popupClose.addEventListener("click", () => {
+            popup.classList.remove("show");
+            if (submissionSucceeded) {
+                window.location.href = "index.html";
+            }
+        });
     </script>
 
 </body>
